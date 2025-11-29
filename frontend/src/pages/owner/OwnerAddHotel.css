@@ -1,0 +1,169 @@
+/* Page layout */
+.add-hotel-container {
+  height: 100vh;
+  overflow: hidden; /* no scroll here */
+  background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+  display: flex;
+  justify-content: center;
+ 
+  padding: 40px;
+}
+
+/* Card styling unchanged */
+.add-hotel-card {
+  width: 550px;
+  max-height: 90vh;
+ 
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(255, 180, 0, 0.15);
+  animation: fadeIn 0.8s ease;
+  color: #fff;
+}
+
+/* Custom file upload button */
+.upload-btn {
+  background: linear-gradient(135deg, #ffd75e, #ff9900);
+  padding: 6px 10px;
+  border-radius: 10px;
+  color: #1b1b1b;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  box-shadow: 0 5px 15px rgba(255, 180, 0, 0.35);
+  transition: 0.3s ease;
+}
+
+.upload-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 200, 0, 0.55);
+}
+
+/* IMAGE PREVIEW GRID */
+.image-preview-container {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Title */
+.add-hotel-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Form spacing */
+.add-hotel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.default-preview {
+  width: 120px;
+  height: 85px;
+  border-radius: 8px;
+  opacity: 0.5;
+  border: 2px dashed #ffaa33;
+  object-fit: contain;
+  padding: 10px;
+  background: rgba(255, 175, 0, 0.1);
+}
+
+/* Uploaded image preview */
+.preview-img {
+  width: 120px;
+  height: 85px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 180, 0, 0.4);
+  border: 2px solid #ffaa33;
+}
+/* Inputs */
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.13);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  box-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+}
+
+.textarea {
+  min-height: 110px;
+  resize: none;
+}
+
+/* Row input arrangement */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+/* Upload Section */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.uploading-text {
+  color: #ffcc66;
+  font-style: italic;
+}
+
+/* Preview images */
+
+.preview-img {
+  width: 120px;
+  height: 85px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(255, 180, 0, 0.4);
+}
+
+/* PREMIUM SUBMIT BUTTON */
+.submit-btn {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffd75e, #ff9900);
+  color: #1d1d1d;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(255, 170, 26, 0.35);
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(255, 190, 0, 0.5);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

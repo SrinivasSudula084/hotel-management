@@ -1,0 +1,149 @@
+/* ----------------------------------------------
+   WRAPPER (Glass Card)
+---------------------------------------------- */
+.cal-wrapper {
+  padding: 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  width: fit-content;
+  margin: auto;
+}
+
+/* React Date Range Base */
+.rdrCalendarWrapper {
+  background: transparent !important;
+  color: #fff !important;
+  font-family: inherit;
+}
+
+.rdrDateRangeWrapper {
+  background: transparent !important;
+}
+
+/* ----------------------------------------------
+   Month name styling
+---------------------------------------------- */
+.rdrMonthName {
+  color: #fff !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  margin-bottom: 12px !important;
+  text-align: center !important;
+}
+
+/* ----------------------------------------------
+   Weekday Titles
+---------------------------------------------- */
+.rdrWeekDay {
+  color: #b8c6e0 !important;
+  font-size: 12px !important;
+  opacity: 0.8;
+}
+
+/* ----------------------------------------------
+   Days Grid
+---------------------------------------------- */
+.rdrDay {
+  background: transparent !important;
+}
+
+.rdrDayNumber span {
+  color: #eee !important;
+  font-weight: 500;
+}
+
+/* Hover day effect */
+.rdrDayHovered,
+.rdrDay:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 6px !important;
+}
+
+/* ----------------------------------------------
+   Selected range — Premium Neon Glow
+---------------------------------------------- */
+.rdrInRange,
+.rdrStartEdge,
+.rdrEndEdge {
+  background: rgba(166, 106, 255, 0.45) !important;
+}
+
+.rdrStartEdge,
+.rdrEndEdge {
+  box-shadow: 0 0 15px rgba(166, 106, 255, 0.8) !important;
+  background: #a66aff !important;
+}
+
+/* Selected date number */
+.rdrDayNumber span {
+  position: relative;
+  z-index: 2;
+}
+
+.rdrSelected,
+.rdrDayStartPreview,
+.rdrDayEndPreview {
+  border-radius: 8px !important;
+}
+
+/* ----------------------------------------------
+   Today highlight
+---------------------------------------------- */
+.rdrDayToday .rdrDayNumber span {
+  color: #ffd27f !important;
+  font-weight: 700;
+  border-bottom: 2px solid #ffd27f;
+}
+
+/* ----------------------------------------------
+   Disabled dates
+---------------------------------------------- */
+.rdrDayDisabled {
+  background: rgba(255,255,255,0.05) !important;
+  opacity: 0.25;
+  pointer-events: none;
+  border-radius: 6px;
+}
+
+.rdrDayDisabled .rdrDayNumber span {
+  color: #999 !important;
+}
+
+/* ----------------------------------------------
+   Remove ugly white background / blocks
+---------------------------------------------- */
+.rdrMonth {
+  background: transparent !important;
+}
+
+.rdrMonth > div {
+  background: transparent !important;
+}
+
+.rdrDays {
+  background: transparent !important;
+}
+
+/* ----------------------------------------------
+   Remove borders
+---------------------------------------------- */
+.rdrDay,
+.rdrMonth,
+.rdrCalendarWrapper,
+.rdrDateInput,
+.rdrStaticRangeLabel {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ----------------------------------------------
+   Range preview (hovering)
+---------------------------------------------- */
+.rdrDayStartPreview,
+.rdrDayEndPreview,
+.rdrDayInPreview {
+  background: rgba(255,255,255,0.1) !important;
+  border-radius: 8px !important;
+}

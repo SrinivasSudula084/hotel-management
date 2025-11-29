@@ -1,0 +1,306 @@
+/* -------------------------------------------------
+   Fullscreen Portal
+--------------------------------------------------*/
+.orc-portal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3000;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Dim Background */
+.orc-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Main Modal Box */
+.orc-modal {
+  position: relative;
+  width: 70%;
+  max-height: 90%;
+  overflow-y: auto;
+  margin: 40px auto;
+  padding: 30px;
+  background: #1a1a1a;
+  border-radius: 18px;
+  animation: zoomIn 0.35s ease;
+  color: #fff;
+  box-shadow: 0 0 40px rgba(255, 180, 0, 0.18);
+}
+
+/* Close Button */
+.orc-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.orc-close:hover {
+  color: #ffb733;
+  transform: scale(1.15);
+}
+
+/* Title */
+.orc-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+/* -------------------------
+   Monthly Stats Bar
+--------------------------*/
+.orc-stats {
+  margin: 12px auto 22px auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-around;
+  background: #252525;
+  border-radius: 12px;
+  color: #eee;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+/* Month Controls */
+.orc-monthbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.orc-month-btn {
+  padding: 8px 12px;
+  background: #333;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.2s;
+}
+.orc-month-btn:hover {
+  background: #444;
+  transform: translateY(-2px);
+}
+
+/* -------------------------
+   Calendar Grid
+--------------------------*/
+.orc-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  position: relative;
+}
+
+/* Smooth slide animations */
+.animate-left {
+  animation: slideLeft 0.35s ease;
+}
+
+.animate-right {
+  animation: slideRight 0.35s ease;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideRight {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.orc-weekday {
+  text-align: center;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.orc-empty {
+  height: 60px;
+}
+
+/* Day Cell */
+.orc-day {
+  background: #222;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+}
+
+.orc-day:hover {
+  background: #2f2f2f;
+}
+
+/* Past Days Disabled */
+.orc-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Booked Day */
+.orc-day-booked {
+  background: #662a2a;
+  border: 1px solid #ff6b6b;
+}
+
+.orc-day-booked:hover {
+  background: #8a3b3b;
+}
+
+/* Hover Highlight */
+.orc-day-hover {
+  background: #a84c4c !important;
+}
+
+/* Label inside booked cell */
+.orc-day-label {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: #ffb4b4;
+  color: #740000;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+/* -------------------------
+   Tooltip for hover preview
+--------------------------*/
+.orc-tooltip {
+  position: fixed;
+  background: #2a2a2a;
+  padding: 10px 14px;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  border: 1px solid #ffb733;
+  box-shadow: 0 0 12px rgba(255,180,0,0.2);
+  z-index: 5000;
+  top: 20px;
+  right: 20px;
+  opacity: 0;
+  animation: fadeIn 0.25s forwards;
+}
+
+/* Booking Modal */
+.orc-booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.orc-booking-modal {
+  background: #1e1e1e;
+  padding: 25px;
+  width: 350px;
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255,180,0,0.15);
+  animation: slideUp 0.35s ease;
+  position: relative;
+}
+
+/* Close in Booking Modal */
+.orc-booking-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.orc-booking-close:hover {
+  color: #ffb733;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0 }
+  to { transform: scale(1); opacity: 1 }
+}
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+/* Loading */
+.cancel-select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 10px;
+  background: #242424;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.cancel-select:focus {
+  border-color: #ffb733;
+  box-shadow: 0 0 6px rgba(255,180,0,0.3);
+}
+
+.orc-loading {
+  text-align: center;
+  margin-top: 150px;
+  color: #ffb733;
+  font-size: 1.2rem;
+}
+.orc-cancel-btn {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #d00000, #ff4b4b);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 80, 80, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.orc-cancel-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(255, 70, 70, 0.55),
+              0 6px 12px rgba(0, 0, 0, 0.35);
+}

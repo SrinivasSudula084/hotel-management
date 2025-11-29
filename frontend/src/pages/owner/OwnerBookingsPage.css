@@ -1,0 +1,166 @@
+/* PAGE LAYOUT */
+.ob-page {
+  background: #0f0f0f;
+  min-height: 100vh;
+  padding: 120px 20px 40px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+/* TITLE */
+.ob-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* EMPTY */
+.ob-empty {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* GRID */
+.ob-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* CARD */
+.ob-card {
+  width: 310px;
+  background: #1b1b1b;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 10px rgba(255, 190, 60, 0.08);
+}
+
+.ob-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(255, 190, 60, 0.16);
+}
+
+/* CARD IMAGE */
+.ob-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* CARD BODY */
+.ob-card-body {
+  padding: 15px;
+}
+
+.ob-hotel {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.ob-room {
+  font-size: 0.95rem;
+  color: #d4d4d4;
+  margin-bottom: 6px;
+}
+
+.ob-date {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: #bbb;
+}
+
+/* STATUS BADGES */
+.ob-status {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.ob-status.confirmed {
+  background: #d6ffd6;
+  color: #106b16;
+  border: 1px solid #96e996;
+}
+
+.ob-status.cancelled {
+  background: #ffd2d2;
+  color: #9c0000;
+  border: 1px solid #ff8f8f;
+}
+
+.ob-status.pending {
+  background: #ffe8b0;
+  color: #8b6500;
+  border: 1px solid #ffd57a;
+}
+
+/* MODAL OVERLAY */
+.ob-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  z-index: 3000;
+}
+
+/* MODAL */
+.ob-modal {
+  background: #1e1e1e;
+  padding: 30px;
+  width: 380px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 193, 60, 0.18);
+  color: #fff;
+  animation: zoomIn 0.35s ease;
+  position: relative;
+}
+
+/* MODAL CLOSE */
+.ob-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ob-close:hover {
+  color: #ffb733;
+  transform: scale(1.15);
+}
+
+/* MODAL TITLE */
+.ob-modal-title {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0 }
+  to { transform: scale(1); opacity: 1 }
+}

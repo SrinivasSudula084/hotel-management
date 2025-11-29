@@ -1,0 +1,36 @@
+.ud-nav1 {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 18px 28px;
+  background: rgba(6,8,15,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+
+.ud-nav-left1 { display:flex; gap:14px; align-items:center; }
+.ud-logo1 { font-weight:900; font-size:20px; color:#fff; letter-spacing:-0.5px; }
+.ud-logo1 span { color: var(--accent2); }
+.ud-slogan1 { color: var(--muted); font-size:13px; }
+
+.ud-nav-right1 { display:flex; gap:12px; align-items:center; }
+.nav-link1 {
+  color: var(--muted);
+  text-decoration:none;
+  font-weight:700;
+  padding:8px 12px;
+  border-radius:8px;
+  position:relative;
+}
+
+/* neon underline on hover */
+.nav-link1::after {
+  content: "";
+  position:absolute; left:12px; right:12px; bottom:6px; height:2px; border-radius:2px;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+  opacity: 0.0;
+}
+.nav-link1:hover::after { transform: scaleX(1); opacity: 0.95; }

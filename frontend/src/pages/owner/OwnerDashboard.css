@@ -1,0 +1,121 @@
+/* Only Owner Dashboard is fixed to screen */
+.owner-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;   /* full viewport height */
+  overflow: hidden; /* disable scroll ONLY on this page */
+  position: relative;
+  background: #0f0f0f;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Verification Message */
+.verify-msg {
+  position: absolute;
+  top: 75px;
+  width: 100%;
+  text-align: center;
+  color: #ff4444;
+  font-size: 1rem;
+  font-weight: 600;
+  z-index: 20;
+  animation: fadeIn 0.9s ease;
+}
+
+/* Hero Section */
+.owner-hero {
+  flex: 1; /* fills the remaining height */
+  background-image: url("/auth-bg.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Premium Glass Overlay */
+.owner-hero-overlay {
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(12px) brightness(0.72);
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Title */
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.25);
+}
+
+/* Subtitle */
+.hero-quote {
+  font-size: 1.3rem;
+  color: #e8e8e8;
+  max-width: 650px;
+  margin-top: 12px;
+  margin-bottom: 45px;
+  opacity: 0;
+  animation: slideUp 1s ease forwards 0.3s;
+}
+
+/* Button Wrapper */
+.hero-buttons {
+  display: flex;
+  gap: 25px;
+}
+
+/* Premium Gold Buttons */
+.hero-btn {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ffd75e, #ff9900);
+  color: #1b1b1b;
+
+  box-shadow: 0 8px 22px rgba(255, 170, 26, 0.45);
+  transition: 0.3s ease;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Hover Effect */
+.hero-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 180, 0, 0.65);
+}
+
+/* Footer (premium style) */
+.owner-footer {
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffffd4;
+  text-align: center;
+  padding: 1px 0;
+  font-size: 1rem;
+  /* backdrop-filter: blur(8px); */
+  letter-spacing: 0.4px;
+  background: transparent;
+}
+
+/* ========== Animations ========== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,285 @@
+/* -----------------------------------------------
+   HotelsList.css
+   Full theme consistent with UserDashboard
+------------------------------------------------ */
+
+:root {
+  --bg-1: #071026;
+  --glass-lite: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent1: #6d4bff;
+  --accent2: #ff6b88;
+  --muted: rgba(255, 255, 255, 0.75);
+  --card-bg: #111;
+  --card-border: #222;
+  --price: #ffae00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg-1) 0%, #041026 100%);
+  font-family: Inter, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* -------------------------------------------------
+   NAVBAR (Same as Dashboard)
+-------------------------------------------------- */
+
+.ud-nav2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: rgba(6, 8, 15, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+}
+
+.ud-nav-left2 {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.ud-logo2 {
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+.ud-logo2 span {
+  color: var(--accent2);
+}
+
+.ud-slogan2 {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ud-nav-right2 {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav-link2 {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 12px;
+  position: relative;
+}
+
+/* neon underline hover */
+.nav-link2::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.25s ease;
+  opacity: 0;
+}
+
+.nav-link2:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* ghost logout button */
+.btn-ghost {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* -------------------------------------------------
+   MAIN LAYOUT
+-------------------------------------------------- */
+
+.hl-root {
+  min-height: 100vh;
+}
+
+.hl-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 34px 20px;
+}
+
+.hl-title {
+  font-size: 34px;
+  font-weight: 900;
+  margin: 0 0 24px 0;
+  letter-spacing: -1px;
+}
+
+/* -------------------------------------------------
+   FILTER BAR
+-------------------------------------------------- */
+
+.hl-filters {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--glass-lite);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  margin-bottom: 22px;
+}
+
+.hl-input,
+.hl-select {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.hl-select {
+  cursor: pointer;
+}
+
+/* -------------------------------------------------
+   HOTEL GRID
+-------------------------------------------------- */
+
+.hl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* -------------------------------------------------
+   HOTEL CARD (Exact from Dashboard)
+-------------------------------------------------- */
+
+.hotel-card1 {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 160px;
+}
+
+.card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* price tag */
+.price-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--price);
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hotel-title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.hotel-city {
+  margin: 0;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.hotel-desc {
+  margin: 0;
+  font-size: 13px;
+  color: #999;
+  line-height: 1.35;
+}
+
+/* action buttons */
+.card-actions {
+  margin-top: 8px;
+}
+
+.view-btn {
+  width: 100%;
+  padding: 10px 12px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease;
+}
+
+.view-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(109, 75, 255, 0.12);
+}
+
+/* -------------------------------------------------
+   EMPTY / LOADING TEXT
+-------------------------------------------------- */
+
+.loading,
+.empty {
+  text-align: center;
+  padding: 18px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* -------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .hl-filters {
+    flex-direction: column;
+  }
+}

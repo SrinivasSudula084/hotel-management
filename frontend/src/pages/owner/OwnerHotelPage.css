@@ -1,0 +1,184 @@
+/* ----- PAGE ----- */
+.hotel-page {
+  background: #0f0f0f;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* ----- Banner ----- */
+.hotel-banner {
+  position: relative;
+  height: 320px;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.hotel-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.hotel-banner-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+}
+
+.hotel-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.hotel-description {
+  max-width: 650px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* ----- Action Buttons ----- */
+.hotel-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* Clean Gold */
+.gold-btn {
+  background: #ffb733;
+  color: #000;
+}
+.gold-btn:hover {
+  background: #ffc85c;
+  transform: translateY(-3px);
+}
+
+/* Edit Button */
+.edit-btn {
+  background: #1f6feb;
+  color: white;
+}
+.edit-btn:hover {
+  background: #478cff;
+  transform: translateY(-3px);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ff4747;
+  color: #fff;
+}
+.delete-btn:hover {
+  background: #ff6666;
+  transform: translateY(-3px);
+}
+
+/* ----- Rooms Section ----- */
+.rooms-title {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.rooms-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 20px;
+}
+
+/* ----- Room Cards ----- */
+.room-card {
+  background: #1a1a1a;
+  padding: 16px;
+  width: 260px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 8px rgba(255, 180, 0, 0.08);
+  transition: 0.25s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 16px rgba(255, 180, 0, 0.15);
+}
+
+.room-info {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.room-type {
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+.room-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffb733;
+}
+
+.booked-badge {
+  display: block;
+  background: #caffcc;
+  color: #0a7a24;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin: 8px auto;
+}
+
+/* Calendar Button */
+.room-btn {
+  width: 100%;
+  background: #ffb733;
+  color: #000;
+}
+.room-btn:hover {
+  background: #ffd37a;
+  transform: translateY(-3px);
+}
+
+/* Empty & loading */
+.loading-text,
+.empty-text {
+  margin-top: 20px;
+  text-align: center;
+  color: #bbb;
+  font-size: 1.1rem;
+}
+.room-delete-btn {
+  background: #b22222;
+  color: white;
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.room-delete-btn:hover {
+  background: #e03a3a;
+}

@@ -1,0 +1,41 @@
+.ud-nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 18px 28px;
+  background: rgba(6,8,15,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.ud-nav-left { display:flex; gap:14px; align-items:center; }
+.ud-logo { font-weight:900; font-size:20px; color:#fff; letter-spacing:-0.5px; }
+.ud-logo span { color: var(--accent2); }
+.ud-slogan { color: var(--muted); font-size:13px; }
+
+.ud-nav-right { display:flex; gap:12px; align-items:center; }
+.nav-link {
+  color: var(--muted);
+  text-decoration:none;
+  font-weight:700;
+  padding:8px 12px;
+  border-radius:8px;
+  position:relative;
+}
+
+/* neon underline on hover */
+.nav-link::after {
+  content: "";
+  position:absolute; left:12px; right:12px; bottom:6px; height:2px; border-radius:2px;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+  opacity: 0.0;
+}
+.nav-link:hover::after { transform: scaleX(1); opacity: 0.95; }

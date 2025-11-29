@@ -1,0 +1,115 @@
+.edit-hotel-container {
+  background: #0d0d0d;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.edit-hotel-wrapper {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #111;
+  border-radius: 16px;
+  border: 1px solid #222;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.08);
+}
+
+.page-title {
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.edit-hotel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.edit-hotel-form label {
+  color: #cfcfcf;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.edit-hotel-form input,
+.edit-hotel-form textarea {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 12px;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.edit-hotel-form input:focus,
+.edit-hotel-form textarea:focus {
+  border-color: gold;
+}
+
+.edit-hotel-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Image Grid */
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.img-box {
+  position: relative;
+}
+
+.preview-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+/* Remove Button */
+.remove-img-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  border: none;
+  border-radius: 6px;
+  padding: 3px 6px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+/* Save Button */
+.gold-btn.save-btn {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #d4af37, #f5d76e);
+  color: black;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.gold-btn.save-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px gold;
+}
+
+/* Loading */
+.loading-text {
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 18px;
+}
