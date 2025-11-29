@@ -1,33 +1,18 @@
+// backend/routes/upload.js
 import express from "express";
-import multer from "multer";
-import path from "path";
+import upload from "../config/multer.js";
 
 const router = express.Router();
 
-// Storage Engine
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/"); // folder
-  },
-  filename: (req, file, cb) => {
-    const unique = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, unique + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({ storage });
-
-// Upload Route
 router.post("/", upload.single("image"), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ message: "No file uploaded" });
+  try {
+    // multer-storage-cloudinary sets req.file.path to the Cloudinary URL
+    if (!req.file) return res.status(400).json({ message: "No file uploaded" });
+    return res.json({ url: req.file.path });
+  } catch (err) {
+    console.error("Upload error:", err);
+    return res.status(500).json({ message: "Upload failed" });
   }
-
-  // FINAL PUBLIC URL
-  const imageUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
-;
-
-  res.json({ url: imageUrl });
 });
 
 export default router;

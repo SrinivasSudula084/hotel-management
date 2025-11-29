@@ -116,25 +116,6 @@ router.put("/:hotelId", auth, requireRole("owner"), async (req, res) => {
 
 
 
-// GET SPECIFIC HOTEL + ROOMS
-router.get("/:hotelId", auth, requireRole("owner"), async (req, res) => {
-  try {
-    const { hotelId } = req.params;
-
-    const hotel = await Hotel.findOne({
-      _id: hotelId,
-      owner: req.user.id,
-    }).populate("rooms");
-
-    if (!hotel)
-      return res.status(404).json({ message: "Hotel not found or unauthorized" });
-
-    res.json({ hotel });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
 // ADD ROOMS TO HOTEL
 router.post("/:hotelId/rooms", auth, requireRole("owner"), async (req, res) => {
   try {
@@ -366,6 +347,25 @@ router.put("/bookings/:bookingId/cancel", auth, requireRole("owner"), async (req
 
   } catch (err) {
     console.error("Cancel booking error:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+// LAST — GET SPECIFIC HOTEL WITH ROOMS
+router.get("/:hotelId", auth, requireRole("owner"), async (req, res) => {
+  try {
+    const { hotelId } = req.params;
+
+    const hotel = await Hotel.findOne({
+      _id: hotelId,
+      owner: req.user.id,
+    }).populate("rooms");
+
+    if (!hotel)
+      return res.status(404).json({ message: "Hotel not found or unauthorized" });
+
+    res.json({ hotel });
+  } catch (err) {
+    console.error("GET HOTEL ERROR:", err);
     res.status(500).json({ message: "Server error" });
   }
 });
