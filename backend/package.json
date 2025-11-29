@@ -5,11 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-<<<<<<< HEAD
-    "start": "node server.js",
-=======
+
+   
     "start":"node server.js",
->>>>>>> ec1bec70e24734b85cc5fd5938c9e649bb65ef9e
+
     "dev": "nodemon server.js"
   },
   "keywords": [],
